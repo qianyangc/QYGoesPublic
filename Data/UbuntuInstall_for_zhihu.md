@@ -36,21 +36,39 @@
 
 1. 插入移动硬盘，然后打开Disk Utility
 
-   ![1_1_1](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall/1_1_1.jpg)
+   ![1_1_1](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_1.jpg)
+
+   
 
 2. 选择新插入的移动硬盘（千万不要选错了你Macbook的硬盘）
 
-   ![1_1_2](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall/1_1_2.png)
+   ![1_1_2](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_2.png)
+
+   
 
 3. 点击Erase，并按照图中设置选项：
+
+   ![1_1_3](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_3.png)
 
    
 
 4. 再次选中你的移动硬盘，点击**Partition**。按照图中的设置划分一个128MB以上的区域作为Ubuntu的boot loader。在这里我设置了256MB的空间：
 
+   ![1_1_4](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_4.jpg)
+
+   
+
 5. 点击**Apply**，然后点击**Partition**。
 
+   ![1_1_5](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_5.jpg)
+
+   
+
 6. 完成后是下图这个样子的，有两个分区，分别是EmptyDisk和UbuntuBootLoader。我们将把系统装在EmptyDisk里面（见步骤【2】），留出UbuntuBootLoader安装开机启动项（见步骤【3】）。
+
+   ![1_1_6](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_6-8147458.png)
+
+   
 
 7. 弹出移动硬盘并从Mac中拔出。【1.1】完成。
 
@@ -60,7 +78,7 @@
 
 1. 插入USB
 
-2. 下载[Ubuntu镜像](https://ubuntu.com/download/desktop)（官网上是新的20.04，我装的是16.04LTS版，在[这里](https://releases.ubuntu.com/16.04/)可以下载，选*[64-bit PC (AMD64) desktop image](https://releases.ubuntu.com/16.04/ubuntu-16.04.7-desktop-amd64.iso)*）
+2. 下载[Ubuntu镜像](https://ubuntu.com/download/desktop)（官网上是新的20.04，我装的是16.04LTS版，在[这里](https://releases.ubuntu.com/16.04/)可以下载，选[64-bit PC (AMD64) desktop image](https://releases.ubuntu.com/16.04/ubuntu-16.04.7-desktop-amd64.iso)）
 
 3. 下载[balenaEtcher](https://www.balena.io/etcher/)（非常好用的一个烧录镜像的APP，玩RaspberryPi的朋友也可以用这个来烧录RPi的镜像）
 
