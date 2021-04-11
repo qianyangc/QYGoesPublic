@@ -122,5 +122,5 @@ if __name__ == "__main__":
         raise FileNotFoundError("Please input the file's path to start!")
     else:
         args.input = Path(args.input)
-        image_folder_path = args.input.parent/(args.input.stem)
+        image_folder_path = args.input.parent/(args.input.stem).assets
         process_for_zhihu()
