@@ -66,7 +66,7 @@
 
 6. 完成后是下图这个样子的，有两个分区，分别是EmptyDisk和UbuntuBootLoader。我们将把系统装在EmptyDisk里面（见步骤【2】），留出UbuntuBootLoader安装开机启动项（见步骤【3】）。
 
-   ![1_1_6](UbuntuInstall.assets/1_1_6-8147458.png)
+   ![1_1_6](UbuntuInstall.assets/1_1_6.png)
 
    
 
