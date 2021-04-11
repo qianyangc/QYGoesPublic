@@ -82,17 +82,29 @@
 
 3. 下载[balenaEtcher](https://www.balena.io/etcher/)（非常好用的一个烧录镜像的APP，玩RaspberryPi的朋友也可以用这个来烧录RPi的镜像）
 
+   ![1_2_3](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_2_3.png)
+
    
 
 4. 打开Etcher，选择下载好的Ubuntu镜像和用来安装Ubuntu镜像的USB。注意看Target name和size，不要选错了Mac的硬盘（如果你选了一个大容量的存储设备的话Etcher会提醒你的，此时就要注意检查）。
+
+   ![1_2_4](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_2_4.png)
 
    
 
 5. 点击**Flash！**,等待完成。完成后Etcher会提示成功烧录，此时你有可能看到Mac弹出USB不可读的提示信息，先不用管它，什么都不要点。打开Terminal，输入`diskutil list` 看哪个是你的USB。然后在Terminal输入`diskutil eject /dev/diskN`把*diskN*换成和USB对应的盘。
 
+   ![1_2_5](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_2_5.png)
+
+   
+
 6. 成功弹出USB以后，点击**ignore**。【1.2】完成。
 
 这个时候你可以顺便查看一下自己电脑RAM的大小（点击屏幕左上角的苹果，选择**About This Mac**）。这个在后面给Ubuntu设置Swap Space的时候会用到。我的是8GB。
+
+![1_2](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_2.png)
+
+
 
 
 
@@ -106,7 +118,9 @@
 
 1. 关机，然后插入烧录了Ubuntu镜像的USB（注意先不要插移动硬盘）
 
-2. 摁下开机键的同时，长摁住Option键，直到以下页面出现，选择右边黄色的EFI Boot选项：
+2. 摁下开机键的同时，长摁住Option键，直到以下页面出现，选择右边黄色的EFI Boot选项：![2_1_2](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_1_2.jpg)
+
+   
 
    
 
@@ -116,11 +130,11 @@
 
 ### 【2.2】准备移动硬盘
 
-1. 进入Ubuntu后，插入移动硬盘，并打开GParted
+1. 进入Ubuntu后，插入移动硬盘，并打开GParted![2_2_1](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_2_1.png)
 
+   
 
-
-2. 在GParted中，点击右上角的方框选择你的移动硬盘（再次注意不要选错了你的Mac硬盘）。把移动硬盘中，**除了UbuntuBootLoader以外**的所有分区都删掉。例如说，我要删掉的分区就有一个标记着*EFI*的fat32格式分区，还有一个标记着*EmptyDrive*的hfs+格式分区。要删除一个分区，鼠标点击该分区，然后点左上方的红色圆圈斜杠图标，该分区就会出现在等待删除的序列中。
+2. 在GParted中，点击右上角的方框选择你的移动硬盘（再次注意不要选错了你的Mac硬盘）。把移动硬盘中，**除了UbuntuBootLoader以外**的所有分区都删掉。例如说，我要删掉的分区就有一个标记着*EFI*的fat32格式分区，还有一个标记着*EmptyDrive*的hfs+格式分区。要删除一个分区，鼠标点击该分区，然后点左上方的红色圆圈斜杠图标，该分区就会出现在等待删除的序列中。![2_2_2](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_2_2.png)
 
    
 
@@ -130,36 +144,36 @@
 
 
 
-4. 选择好所有要删除的分区后，点击上方绿色的钩，实施操作。
+3. 选择好所有要删除的分区后，点击上方绿色的钩，实施操作。![2_2_3](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_2_3.png)
 
 
 
-5. 分区删除后，你的移动硬盘就只剩下UbuntuBootLoader和一个*unallocated*的区域。下面我们来新增两个分区（点击**Partition** -> **new**，填好设置后点**Add**）:
+4. 分区删除后，你的移动硬盘就只剩下UbuntuBootLoader和一个*unallocated*的区域。下面我们来新增两个分区（点击**Partition** -> **new**，填好设置后点**Add**）:![2_2_4](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_2_4.png)
 
-   * Swap 分区
+* Swap 分区
 
-     * New Size: 8192 MiB（跟你电脑的RAM一样大或者稍大一点）
-     * Created as: Primary Partition（有别的教程显示要用Logical，但是我在这里没法选所以就没改它，也安装成功了，使用正常）
-     * File system: linux-swap
+  * New Size: 8192 MiB（跟你电脑的RAM一样大或者稍大一点）
+  * Created as: Primary Partition（有别的教程显示要用Logical，但是我在这里没法选所以就没改它，也安装成功了，使用正常）
+  * File system: linux-swap
 
-     
+  ![2_2_4_swap](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_2_4_swap.png)
 
-   * Root分区
+  
 
-     * New Size: 剩下的全部空间（除非你想多分几个区）
-     * Created as: Primary Partition
-     * File system: ext4
-     * Label: 爱写啥写啥
+* Root分区
+
+  * New Size: 剩下的全部空间（除非你想多分几个区）
+  * Created as: Primary Partition
+  * File system: ext4
+  * Label: 爱写啥写啥
+  
+  ![2_2_4_root](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_2_4_root.png)
 
 
 
 6. 点击上方绿色的钩，应用更改
 
-
-
 7. 记住Root分区的分区名（Partition），例如说/dev/sdd2
-
-
 
 8. 关掉GParted
 
@@ -173,21 +187,19 @@
 
 2. 双击主屏幕左上角的"Install Ubuntu"
 
-   
-
 3. 选择语言
-
-   
 
 4. 选择安装项（注：如果你没有开Wifi的话，第一项下载更新会变得不可选。但也没有关系，可以安装完再下载更新，只是说时间可能会长一些。），点**Continue**
 
-   
-
-5. 因为要安装在移动硬盘上，所以要选择**Something else**：
+   ![2_3_4](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_3_4.png)
 
    
 
-6. 找到你刚才设置的*ext4格式*的分区（检查一下分区名和空间大小是对的），点它。
+5. 因为要安装在移动硬盘上，所以要选择**Something else**：![2_3_5](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_3_5.png)
+
+   
+
+6. 找到你刚才设置的*ext4格式*的分区（检查一下分区名和空间大小是对的），点它。![2_3_6](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_3_6.png)
 
    
 
@@ -198,9 +210,11 @@
    * 选Format the partition
    * Mount point: / （主分区root）
 
+   ![2_3_7](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_3_7.png)
 
+   
 
-8. 在下方"Device for boot loader installation"，选这一个ext4格式的分区（注意不要选了整个/dev/sdd，因为我们还要留下一个UbuntuBootLoader的区域在下一步安装启动项）。例如此处选择的是/dev/sdd2
+8. 在下方"Device for boot loader installation"，选这一个ext4格式的分区（注意不要选了整个/dev/sdd，因为我们还要留下一个UbuntuBootLoader的区域在下一步安装启动项）。例如此处选择的是/dev/sdd2![2_3_8](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_3_8.png)
 
 
 
@@ -242,7 +256,7 @@
 
 `exit`
 
-8. 所有的指令如下图：
+8. 所有的指令如下图：![3_1_8](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_1_8.png)
 
 
 
@@ -259,11 +273,11 @@
 
 如果你的Mac系统是El Capitan(10.11)或以上（一般都是，毕竟现在都出到Big Sur(11.X)了），Mac系统有额外的安全设置SIP（System Integrity Protection），我们需要先关掉它。
 
-1. 关机之后重启电脑同时摁住Command+R直到苹果的标志出现，进入恢复模式（Recovery Mode）。点击你的用户名，输入密码。
+1. 关机之后重启电脑同时摁住Command+R直到苹果的标志出现，进入恢复模式（Recovery Mode）。点击你的用户名，输入密码。![3_2_1](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_1.jpg)
 
    
 
-2. 屏幕上方，点击**Utilities** -> **Terminal**
+2. 屏幕上方，点击**Utilities** -> **Terminal**![3_2_2](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_2.jpg)
 
    
 
@@ -271,9 +285,9 @@
 
 `csrutil disable`
 
+![3_2_3](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_3.jpg)
 
-
-4. 摁回车，然后点**Restart**重启电脑。
+4. 摁回车，然后点**Restart**重启电脑。![3_2_4](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_4.jpg)
 
 
 
@@ -307,11 +321,18 @@
 
 `sudo cp ~/Downloads/SystemVersion.plist ./`
 
-9. 所有的指令如下图：
+9. 所有的指令如下图：![3_3_9](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_3_9.png)
 
 
 
 10. 打开Disk Utility（**Go** -> **Utilities** -> **Disk Utility**）,查看你的UbuntuBootLoader的设备编号。或者你也可以在Terminal输入`disktutil list`查看。在我的是disk2s3。
+
+    ![3_3_10](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_3_10.png)
+
+    ![3_3_10b](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_3_10b.png)
+
+    
+
 11. 最后一步，在Terminal中输入：
 
 `sudo bless --device /dev/diskNsK --setBoot`
@@ -334,11 +355,22 @@
 
 Q1. 开机出现grub的提示？
 
-输入exit，然后摁回车。如果想一劳永逸地解决这个问题，进入MacOS以后，点左上方的苹果，选择**System Preferences** -> **Startup Disk**。进去之后点左下角的锁解锁，然后选择你的Macintosh。重启之后就再也不会见到grub了。
+输入exit，然后摁回车。
+
+![Q1_a](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/Q1_a.jpg)
+
+如果想一劳永逸地解决这个问题，进入MacOS以后，点左上方的苹果，选择**System Preferences** -> **Startup Disk**。进去之后点左下角的锁解锁，然后选择你的Macintosh。重启之后就再也不会见到grub了。
+
+![Q1_1](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/Q1_1.png)
+
+![Q1_2](https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/Q1_2.png)
 
 
 
 ### 参考链接：
 
-
+* https://florisvanbreugel.wordpress.com/2018/03/23/installing-ubuntu-on-an-external-ssd-drive-on-a-macbook/
+* https://business.tutsplus.com/tutorials/how-to-create-a-bootable-ubuntu-usb-drive-for-mac-in-os-x--cms-21253 
+* https://zhuanlan.zhihu.com/p/35294113
+* https://askubuntu.com/questions/229552/grub-rescue-after-installing-ubuntu-on-a-external-hdd-from-usb
 
