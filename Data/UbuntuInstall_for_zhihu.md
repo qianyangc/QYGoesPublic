@@ -36,7 +36,7 @@
 
 1. 插入移动硬盘，然后打开Disk Utility
 
-   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_1.jpg" alt="1_1_1" style="zoom: 50%;" />
+   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_1.png" alt="1_1_1" style="zoom: 50%;" />
 
    
 
@@ -56,13 +56,13 @@
 
 4. 再次选中你的移动硬盘，点击**Partition**。按照图中的设置划分一个128MB以上的区域作为Ubuntu的boot loader。在这里我设置了256MB的空间：
 
-   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_4.jpg" alt="1_1_4" style="zoom:50%;" />
+   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_4.png" alt="1_1_4" style="zoom:50%;" />
 
    
 
 5. 点击**Apply**，然后点击**Partition**。
 
-   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_5.jpg" alt="1_1_5" style="zoom:50%;" />
+   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/1_1_5.png" alt="1_1_5" style="zoom:50%;" />
 
    
 
@@ -122,7 +122,7 @@
 
 2. 摁下开机键的同时，长摁住Option键，直到以下页面出现，选择右边黄色的EFI Boot选项：
 
-   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_1_2.jpg" alt="2_1_2" style="zoom: 33%;" />
+   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/2_1_2.jpg" alt="2_1_2" style="zoom: 25%;" />
 
    
 
@@ -301,7 +301,7 @@
 
 2. 屏幕上方，点击**Utilities** -> **Terminal**
 
-   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_2.jpg" alt="3_2_2" style="zoom:33%;" />
+   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_2.jpg" alt="3_2_2" style="zoom: 25%;" />
 
    
 
@@ -309,11 +309,11 @@
 
 `csrutil disable`
 
-<img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_3.jpg" alt="3_2_3" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_3.jpg" alt="3_2_3" style="zoom: 25%;" />
 
 4. 摁回车，然后点**Restart**重启电脑。
 
-   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_4.jpg" alt="3_2_4" style="zoom:33%;" />
+   <img src="https://raw.githubusercontent.com/qianyangc/QYGoesPublic/master/Data/UbuntuInstall.assets/3_2_4.jpg" alt="3_2_4" style="zoom: 25%;" />
 
 
 
